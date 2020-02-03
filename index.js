@@ -87,6 +87,7 @@ var get = (o_params)=>{
 iotcat(https://iotcat.me)`,
 				'iotcat-py'
 				);
+			console.log('send to ' + o.mail[index]);
 		}
 		resolve();
 	});
@@ -98,6 +99,7 @@ iotcat(https://iotcat.me)`,
 				`${o.province}${(o.city)?o.city:''}确诊${info.confirmedCount}`,
 				'提醒您'
 				);
+			console.log('send to ' + o.sms[index]);
 		}
 		resolve();
 	});
