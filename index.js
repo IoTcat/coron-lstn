@@ -2,12 +2,12 @@ var get = (o_params)=>{
 	var o = {
 		province: null,
 		city: null,
-		sms: ['18118155257'],
-		mail: ['i@yimian.xyz'],
+		sms: [],
+		mail: [],
 		success: ()=>{},
 		error: ()=>{},
 		url: 'https://lab.isaaclin.cn/nCoV/api/area',
-		interval: 5000,
+		interval: 50000,
 		debug: false
 	}
 
@@ -54,7 +54,7 @@ var get = (o_params)=>{
 		var info = await getInfo();
 		console.log(info);
 
-		if(info.updateTime == updateTime){
+		if(info.updateTime != updateTime){
 			updateTime = info.updateTime;
 			fs.writeFileSync(fileBck, updateTime);
 			await push(info);
