@@ -5,7 +5,7 @@
 ### Import sms module
 
 ```js
-const sms = require('ushio-sms').sms(API_url); //substitute the API_url
+const sms = require('ushio-sms')(API_url); //substitute the API_url
 
 ```
 
