@@ -53,7 +53,7 @@ var get = (o_params)=>{
 
 	const unit = async () => {
 		var info = await getInfo();
-		console.log(info);
+		if(o.debug)console.log(info);
 
 		if(info.confirmedCount > updateTime){
 			updateTime = info.confirmedCount;
