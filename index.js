@@ -52,7 +52,7 @@ var get = (o_params)=>{
 
 	const unit = async () => {
 		var info = await getInfo();
-		console.log(info);
+		//console.log(info);
 
 		if(info.updateTime != updateTime){
 			updateTime = info.updateTime;
@@ -67,6 +67,7 @@ var get = (o_params)=>{
 
 
 	const push = info => new Promise(async resolve => {
+		console.log(info);
 		await pushMail(info);
 		setTimeout(pushSms, o.interval/2, info);
 	});

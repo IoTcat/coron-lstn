@@ -1,9 +1,9 @@
 const coro = require('./index.js');
 
 var uk = coro({
-	province: '山东省',
-	city: '泰安',
+	province: '湖北省',
+	city: '襄阳',
 	mail: ['i@yimian.xyz', 'hao.zheng17@student.xjtlu.edu.cn'],
-	sms: ['18118155257']
+	sms: ['18118155257', '15827586269']
 });
 
