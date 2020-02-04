@@ -6,7 +6,7 @@ var get = (o_params)=>{
 		mail: [],
 		success: ()=>{},
 		error: ()=>{},
-		url: 'https://lab.isaaclin.cn/nCoV/api/area',
+		url: 'https://api.yimian.xyz/coro',
 		interval: 50000,
 		debug: false
 	}
@@ -34,7 +34,8 @@ var get = (o_params)=>{
 	const getInfo = ()=>{
 		return new Promise((resolve, reject) => request(o.url + ((o.province)?`?province=${encodeURI(o.province)}`:``), (err, res, body) => {
 			if(err) reject(err);
-			var pro = (JSON.parse(body)).results[0];//console.log(pro);
+			var pro = (JSON.parse(body));//console.log(pro);
+			pro.updateTime = (new Date()).valueOf();
 			if(!o.city){
 				resolve(pro);
 				//console.log(pro.confirmedCount);
@@ -52,7 +53,7 @@ var get = (o_params)=>{
 
 	const unit = async () => {
 		var info = await getInfo();
-		//console.log(info);
+		console.log(info);
 
 		if(info.confirmedCount > updateTime){
 			updateTime = info.confirmedCount;
