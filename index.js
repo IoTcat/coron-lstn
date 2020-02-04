@@ -54,8 +54,8 @@ var get = (o_params)=>{
 		var info = await getInfo();
 		//console.log(info);
 
-		if(info.updateTime != updateTime){
-			updateTime = info.updateTime;
+		if(info.confirmedCount > updateTime){
+			updateTime = info.confirmedCount;
 			fs.writeFileSync(fileBck, updateTime);
 			await push(info);
 		}
